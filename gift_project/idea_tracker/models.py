@@ -4,7 +4,7 @@ from django.forms import ModelForm
 class Recipient(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
-    birthday = models.DateField(blank=True)
+    birthday = models.DateField(max_length=8, blank=True)
     notes = models.TextField(max_length=255, blank=True)
 
     def __str__(self):
@@ -21,11 +21,9 @@ class Gift(models.Model):
 class RecipientForm(ModelForm):
     class Meta:
         model = Recipient
-        fields = ['first_name', 'last_name', 'birthday', 'notes',
-]
+        fields = ['first_name', 'last_name', 'birthday', 'notes',]
 
 class GiftForm(ModelForm):
     class Meta:
         model = Gift
-        fields = ['name', 'model_number', 'recipients',
-]
+        fields = ['name', 'model_number', 'recipients',]
