@@ -1,23 +1,8 @@
 {% extends 'layout.html' %}
+{% load static from staticfiles %}
 
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8" name="viewport">
-    <link ref="stylesheet" type="text/css" href="css/normalize.css">
-    <link ref="stylesheet" type="text/css" href="css/main.css">
-</head>
+{% block static %}<link rel="stylesheet" href="{% static 'idea_tracker/css/forms.css' %}">{% endblock %}
 
-<body>
-
-    <header class='hero'>
-        <nav>
-            <ul>
-                <li><a href=home.html>Home</a></li>
-                <li><a href=forms.html>GiftBuddy</a></li>
-            </ul>
-        </nav>
-    </header>
     {% block content %}
     <!--This page will output the results of the inputs on the forms page...a 'big picture'or 'shopping list' view of all recipients, their associated gifts, individual prices and a total price for all gifts-->
     <h3>This page will output the results of the inputs on the forms page...a 'big picture'or 'shopping list' view of all recipients, their associated gifts, individual prices and a total price for all gifts</h3>
