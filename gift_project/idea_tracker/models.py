@@ -4,7 +4,7 @@ from django.forms import ModelForm
 class Recipient(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
-    birthday = models.DateField(max_length=8, blank=True)
+    birthday = models.CharField(max_length=10)
     notes = models.TextField(max_length=255, blank=True)
 
     def __str__(self):

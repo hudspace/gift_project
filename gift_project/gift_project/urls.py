@@ -15,9 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
+from . import views
+
 
 
 urlpatterns = [
     url(r'^idea_tracker/', include('idea_tracker.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^home/', views.home, name='home'),
 ]
+
+urlpatterns += staticfiles_urlpatterns()

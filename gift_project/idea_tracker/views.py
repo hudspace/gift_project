@@ -1,5 +1,11 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 
-def index(request):
-    return HttpResponse("<h2 style='color:limegreen'>Welcome to GiftBuddy...Here you can store your best gift ideas, assign them to recipients, track gifted/ungifted/regifted status, and check them off on your budget!<h2>")
+from .models import Recipient, Gift
 
+
+def forms(request):
+    return render(request, 'idea_tracker/forms.html')
+
+def shoppinglist(request):
+    return render(request, 'idea_tracker/shoppinglist.html')
