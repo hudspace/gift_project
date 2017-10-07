@@ -1,28 +1,69 @@
+
+
 :root {
-    background: #e6e6e6;
+    background: #c6ebbe
+;
 }
 
+
 header {
-    background: lightblue;
+    background: #8b6742;
+    color: #000;
+    background-image: url('../images/pattern2.png');
+    z-index: 1000;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "title nav";
 }
 
 header h1 {
-    color: blue;
+    grid-area: title;
     text-align: center;
-    padding-top: 1.5em;
-    margin-top: -1em;
-    padding-bottom: .5em;
-    }
-
-h2 {
-    margin-bottom: 2.5em;
-    text-align: center;
+    color: #bc8da0;
+    font-family: 'Monoton', cursive;
+    font-size: 3em;
+    margin-bottom: -20px;
 }
 
-form {
-    width: 35em;
+nav {
+    grid-area: nav;
+}
+
+nav ul {
+    text-align: right;
     margin: 0 auto;
 }
+
+nav li {
+    font-family: 'Kalam', cursive;
+    display: block;
+    margin: 0 2em;
+    padding: 0 1em 10px;
+}
+
+a {
+    color: #bc8da0;
+}
+
+a:visited {
+    color: #bc8da0;
+}
+
+h2 {
+    color: darkblue;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2em;
+ }
+
+form {
+    color: darkblue;
+    font-family: 'Kalam', cursive;
+    width: 50em;
+    margin: 0 auto;
+}
+
 
 label, input {
     display: block;
@@ -31,31 +72,4 @@ label, input {
 
 input {
     margin-bottom: 2em;
-}
-
-.windfield {
-    display: inline-block;
-}
-
-#ecamexample {
-    width: 22em;
-}
-
-input::placeholder {
-    color: #a8dcf0;
-    font-style: italic;
-}
-
-#submit {
-    background-color: blue;
-    color: white;
-}
-
-input::value {
-    line-height: 50%;
-}
-
-#result {
-    color: blue;
-    font-style: italic;
 }

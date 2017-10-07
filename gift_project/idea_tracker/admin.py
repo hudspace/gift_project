@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Recipient, Gift
+from . import models
 
-admin.site.register(Recipient)
-admin.site.register(Gift)
+admin.site.register(models.Recipient)
+admin.site.register(models.Gift)

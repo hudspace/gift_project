@@ -1,30 +1,37 @@
-{% load static from staticfiles %}
-
 <!doctype html>
+{% load static from staticfiles %}
 <html>
 <head>
 
     <title>{% block title %}{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Kalam|Monoton|Permanent+Marker" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/layout.css' %}">
-    {% block static %}{% endblock %}
+    {% block css %}{% endblock %}
 
 </head>
 
 <body>
 
+    <div class="hero">
 
+        <header>
+            <h1>GIFT TRACKER</h1>
+            <nav>
+                <ul>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/idea_tracker/forms/recipient_form">Gift Tracker</a></li>
+                    <li><a href="/idea_tracker/shoppinglist">My Shopping List</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <header class='hero'>
-        <nav>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="forms.html">GiftBuddy</a></li>
-            </ul>
-        </nav>
-    </header>
+        <aside>
+        </aside>
+
+    </div>
 
     {% block content %}
-    <h2>Welcome to GiftBuddy...Here you can store your best gift ideas, assign them to recipients, track gifted/ungifted/regifted status, and check them off on your budget!<h2>
+    <h2>Welcome to Gift Tracker...Here you can store your best gift ideas, assign them to recipients, track gifted/ungifted/regifted status, and check them off on your budget!<h2>
     {% endblock %}
 
 

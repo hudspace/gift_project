@@ -1,13 +1,15 @@
 {% extends 'layout.html' %}
 {% load static from staticfiles %}
 
-{% block static %}<link rel="stylesheet" href="{% static 'idea_tracker/css/forms.css' %}">{% endblock %}
+{% block content %}
 
+<h2>Now, enter your gift ideas:</h2>
 
-    {% block content %}
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{ gift_form.as_p }}
+    <input type="submit" value="Submit">
     <!--This page will contain model form fields for inputting data needed to populate the Recipient and Gift tables-->
     <h3>This page will contain model form fields for inputting data needed to populate the Recipient and Gift tables</h3>
-    {% endblock %}
 
-</body>
-</html>
+{% endblock %}
