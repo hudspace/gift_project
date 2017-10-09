@@ -57,6 +57,12 @@ h2 {
     font-size: 2em;
  }
 
+ h3, h4, h5 {
+    color: darkblue;
+    font-family: 'Permanent Marker', cursive, 'Courier New', serif;
+    font-size: 2em;
+ }
+
 form {
     color: darkblue;
     font-family: 'Kalam', cursive;

@@ -5,11 +5,12 @@
 
 <h2>Now, enter your gift ideas:</h2>
 
-    <form method="POST" action="">
+    <form method="POST" action="/idea_tracker/forms/shoppinglist/">
         {% csrf_token %}
         {{ gift_form.as_p }}
-    <input type="submit" value="Submit">
+        <input type="submit" value="Submit">
     <!--This page will contain model form fields for inputting data needed to populate the Recipient and Gift tables-->
+    </form>
     <h3>This page will contain model form fields for inputting data needed to populate the Recipient and Gift tables</h3>
 
 {% endblock %}

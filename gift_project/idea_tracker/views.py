@@ -24,4 +24,4 @@ def gift_form(request):
 
 
 def shopping_list(request):
-    return render(request, 'idea_tracker/shoppinglist.html')
+    return render(request, 'idea_tracker/shoppinglist.html', {'shopping_list': shopping_list})
