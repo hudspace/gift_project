@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% load static from staticfiles %}
+
+{% block content %}
+
+    {% for first_name in recipient %}
+        <ul>
+            <li><a href='#'>{{first_name}}</a></li>
+        </ul>
+    {% endfor %}
+
+<h3>This page will list recipients alphabetically, with links to edit or delete them</h3>
+
+{% endblock %}

@@ -5,11 +5,18 @@
 
     {% block content %}
     <!--This page will output the results of the inputs on the forms page...a 'big picture'or 'shopping list' view of all recipients, their associated gifts, individual prices and a total price for all gifts-->
+        {% for name in gifts %}
+            <ul>
+                <li>{{ name }}</li>
+            </ul>
+        {% endfor %}
+
     <form method="GET" action="">
         {% csrf_token %}
         {{ shopping_list.as_p }}<input type="submit" value="Submit">
     <!--This page will contain model form fields for inputting data needed to populate the Recipient and Gift tables-->
     </form>
+
 
     {% endblock %}
     <h3>This page will output the results of the inputs on the forms page...a 'big picture'or 'shopping list' view of all recipients, their associated gifts, individual prices and a total price for all gifts</h3>

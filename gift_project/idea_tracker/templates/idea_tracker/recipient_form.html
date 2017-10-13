@@ -7,13 +7,13 @@
     <h2>First, create your list of potential gift recipients:</h2>
 
 
-    <form method="POST" action="">
+    <form method="POST" action="/idea_tracker/forms/recipient_form/">
         {% csrf_token %}
-        {{ recipient_form.as_p }}
-        <input type="submit" value="Next Recipient">
+        {{ form.as_p }}
+        <input type="submit" value="Add Recipient">
     </form>
 
-    <h3>All done? Click "Submit" to continue...</h3>
+    <h4>All done? Click "Submit" to continue...</h4>
     <form method="POST" action="/idea_tracker/forms/gift_form/">
         {% csrf_token %}
         <input type="submit" value="Submit">

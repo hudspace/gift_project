@@ -36,15 +36,20 @@ nav ul {
     margin: 0 auto;
 }
 
-nav li {
+nav li, li {
     font-family: 'Kalam', cursive;
     display: block;
     margin: 0 2em;
     padding: 0 1em 10px;
 }
 
+
 a {
     color: #bc8da0;
+}
+
+li a {
+    color: darkblue;
 }
 
 a:visited {
