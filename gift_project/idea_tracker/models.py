@@ -16,7 +16,7 @@ class Recipient(models.Model):
 class Gift(models.Model):
     name = models.CharField(max_length=30)
     model_number = models.CharField(max_length=30, blank=True)
-    price = models.IntegerField(default=0)
+    price = models.DecimalField(default=0.0, decimal_places=2, max_digits=6)
     recipients = models.ManyToManyField(Recipient)
 
     def __str__(self):
