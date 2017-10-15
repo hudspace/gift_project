@@ -7,7 +7,7 @@
 
     <form method="POST" action="">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ gift_form.as_p }}
         <input type="submit" value="Submit">
     <!--This page will contain model form fields for inputting data needed to populate the Recipient and Gift tables-->
     </form>
