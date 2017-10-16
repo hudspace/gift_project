@@ -84,3 +84,8 @@ label, input {
 input {
     margin-bottom: 2em;
 }
+
+.recipient-detail label {
+    font-family: 'Kalam', cursive;
+    font-size: xx-large;
+}

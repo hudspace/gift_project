@@ -10,7 +10,9 @@ class Recipient(models.Model):
     notes = models.TextField(max_length=255, blank=True)
 
     def __str__(self):
-        return "{} {}".format(self.first_name, self.last_name)
+        return "{} {}....{}....{}".format(self.first_name, self.last_name, self.birthday, self.notes)
+
+
 
     def get_absolute_url(self):
         return reverse('views.recipient_detail', args=[str(self.id)])

@@ -37,9 +37,10 @@ def shopping_list(request, first_name):
     recipients = models.Recipient.objects.filter(first_name=first_name)
     return render(request, 'idea_tracker/shoppinglist.html', {'recipients': recipients, 'gifts': gifts, 'shoppingList': shoppingList})
 
-def recipient_detail(request, first_name):
-    recipients = models.Recipient.objects.filter(first_name=first_name)
-    return render(request, 'idea_tracker/recipient_detail.html', {'first_name': first_name})
+def recipient_detail(request, pk):
+    recipient = get_object_or_404(models.Recipient, pk=pk)
+    return render(request, 'idea_tracker/recipient_detail.html',
+        {'recipient': recipient,})
 
 def recipient_edit(request):
     recipient = get_object_or_404(models.Recipient)

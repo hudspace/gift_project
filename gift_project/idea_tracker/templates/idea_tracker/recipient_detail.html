@@ -3,7 +3,13 @@
 
 {% block content %}
 
-    {{ first_name }}
+<h3>This page will list one selected recipient at a time, along with that recipients attributes (birthday, notes, associated gifts). User will be able to edit or delete them</h3>
+
+
+
+    <form>
+        <label class='recipient-detail'>{{ recipient }}</label>
+    </form>
 
 
 
@@ -14,9 +20,5 @@
             #<td>{{ recipient_birthday }}</td>
             {% endfor %}-->
 
-
-    </table>
-
-<h3>This page will list recipients alphabetically, with links to edit or delete them</h3>
 
 {% endblock %}
