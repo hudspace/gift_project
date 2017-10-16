@@ -62,10 +62,15 @@ h2 {
     font-size: 2em;
  }
 
- h3, h4, h5 {
+ h3, h4 {
     color: darkblue;
     font-family: 'Permanent Marker', cursive, 'Courier New', serif;
     font-size: 2em;
+ }
+
+ h5 {
+    color: darkblue;
+    font-size: 1.2em;
  }
 
 form {
@@ -85,7 +90,7 @@ input {
     margin-bottom: 2em;
 }
 
-.recipient-detail label {
+.recipient-detail h5 {
     font-family: 'Kalam', cursive;
     font-size: xx-large;
 }

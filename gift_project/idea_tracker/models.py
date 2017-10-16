@@ -12,10 +12,8 @@ class Recipient(models.Model):
     def __str__(self):
         return "{} {}....{}....{}".format(self.first_name, self.last_name, self.birthday, self.notes)
 
-
-
-    def get_absolute_url(self):
-        return reverse('views.recipient_detail', args=[str(self.id)])
+    def get_absolute_url(self, *args):
+        return reverse('views.recipient_detail', args=str(self.pk))
 
 
 class Gift(models.Model):
@@ -25,6 +23,6 @@ class Gift(models.Model):
     recipients = models.ManyToManyField(Recipient)
 
     def __str__(self):
-        return "{}, {}".format(self.name, self.recipients)
+        return "{}".format(self.name)
 
 

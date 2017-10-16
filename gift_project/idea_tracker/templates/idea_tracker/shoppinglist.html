@@ -5,12 +5,19 @@
 
     {% block content %}
     <!--This page will output the results of the inputs on the forms page...a 'big picture'or 'shopping list' view of all recipients, their associated gifts, individual prices and a total price for all gifts-->
+<h3> Click on a Recipient to edit or delete:</h3>
 
+    {% for each in recipients %}
+        <ul>
+            <li><h5 style="font-family: 'Kalam', cursive"><a href="{{ Recipient.get_absolute_url }}">{{ each }}</a></li>
+        </ul>
+    {% endfor %}
 
-    <!--<form method="GET" action="">
-        {% csrf_token %}
-        {{ shopping_list.as_p }}<input type="submit" value="Submit">
-    </form>-->
+    {% for each in gifts %}
+        <ul>
+            <li><h5 style="font-family: 'Kalam', cursive">{{ each }}</h5></li>
+        </ul>
+    {% endfor %}
 
 
 
