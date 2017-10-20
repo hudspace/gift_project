@@ -14,4 +14,4 @@ class RecipientForm(ModelForm):
 class GiftForm(ModelForm):
     class Meta:
         model = models.Gift
-        fields = ['name', 'model_number', 'price', 'recipients',]
+        fields = ['name', 'model_number', 'price', 'recipients', 'purchased']

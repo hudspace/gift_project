@@ -11,7 +11,7 @@ from . import models
 def recipient_form(request):
     form = forms.RecipientForm(request.POST or None)
     if form.is_valid():
-        instance = form.save(commit=False)
+        instance = form.save()
         instance.save()
         messages.add_message(request, messages.SUCCESS, 'New gift recipient added!')
         return HttpResponseRedirect('/idea_tracker/forms/recipient_form')
@@ -24,7 +24,7 @@ def gift_form(request):
     form = forms.GiftForm(request.POST or None)
     print(form)
     if form.is_valid():
-        instance = form.save(commit=False)
+        instance = form.save()
         instance.save()
         messages.add_message(request, messages.SUCCESS, 'New gift idea added!')
         return HttpResponseRedirect('/idea_tracker/forms/gift_form')
@@ -34,14 +34,17 @@ def gift_form(request):
 
 
 def shopping_list(request):
-    recipients = models.Recipient.objects.all()
-    gifts = models.Gift.objects.all()
-    return render(request, 'idea_tracker/shoppinglist.html', {'recipients': recipients, 'gifts': gifts})
+    recipients = models.Recipient.objects.prefetch_related('gift_set').all().order_by('last_name')
+    gift_list = models.Gift.objects.all()
+    total = []
+    for x in gift_list:
+        total.append(x.price)
+        total_price = sum(total)
+    return render(request, 'idea_tracker/shoppinglist.html', {'recipient_list': recipients, 'gift_list': gift_list, 'total_price': total_price})
 
 def recipient_detail(request, pk):
     recipient = get_object_or_404(models.Recipient, pk=pk)
-    return render(request, 'idea_tracker/recipient_detail.html',
-        {'recipient': recipient})
+    return render(request, 'idea_tracker/recipient_detail.html', {'recipient': recipient})
 
 def recipient_edit(request):
     recipient = get_object_or_404(models.Recipient)

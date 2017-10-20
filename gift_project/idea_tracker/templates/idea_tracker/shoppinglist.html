@@ -5,25 +5,47 @@
 
     {% block content %}
     <!--This page will output the results of the inputs on the forms page...a 'big picture'or 'shopping list' view of all recipients, their associated gifts, individual prices and a total price for all gifts-->
-<h3> Click on a Recipient to edit or delete:</h3>
+    <div class='container'>
 
-    {% for each in recipients %}
-        <ul>
-            <li><h5 style="font-family: 'Kalam', cursive"><a href="{{ Recipient.get_absolute_url }}">{{ each }}</a></li>
-        </ul>
-    {% endfor %}
+        <div>
 
-    {% for each in gifts %}
-        <ul>
-            <li><h5 style="font-family: 'Kalam', cursive">{{ each }}</h5></li>
-        </ul>
-    {% endfor %}
+            <h3> Click on a Recipient to edit or delete:</h3>
+
+                {% for name in recipient_list %}
 
 
+                    <ul>
+                        <li><a href="{{ get_absolute_url }}">{{ name.first_name }} {{ name.last_name }} /
 
-    <h3>This page will output the results of the inputs on the forms page...a 'big picture'or 'shopping list' view of all recipients, their associated gifts, individual prices and a total price for all gifts</h3>
+                        {% for gift in name.gift_set.all %}
+
+                         <span style='color:darkblue'>{{ gift }}</span></a></li>
+
+                         {% endfor %}
+                    </ul>
+
+                {% endfor %}
+
+        </div>
+
+        <div>
+            <h3>Total required budget:</h3>
+
+
+            <h3 class='price'>$ {{ total_price }}</h3>
+
+
+
+        </div>
+
+
+    </div>
 
     {% endblock %}
+
+
+
+
 </body>
 
 </html>
