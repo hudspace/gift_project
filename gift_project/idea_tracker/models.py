@@ -19,7 +19,7 @@ class Recipient(models.Model):
 class Gift(models.Model):
     name = models.CharField(max_length=30, blank=True)
     model_number = models.CharField(max_length=30, blank=True)
-    price = models.DecimalField(default=0.0, decimal_places=2, max_digits=6)
+    price = models.DecimalField(default=0.00, decimal_places=2, max_digits=6)
     recipients = models.ManyToManyField(Recipient, blank=True)
     purchased = models.BooleanField(default=False)
 

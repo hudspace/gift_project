@@ -8,9 +8,14 @@
     <form method="POST" action="">
         {% csrf_token %}
         {{ gift_form.as_p }}
-        <input type="submit" value="Submit">
+        <input type="submit" value="Add Gift">
     <!--This page will contain model form fields for inputting data needed to populate the Recipient and Gift tables-->
     </form>
-    <h3>This page will contain model form fields for inputting data needed to populate the Recipient and Gift tables</h3>
+
+    <h4>All done? Click "Next" to view your Shopping List...</h4>
+    <form method="POST" action="/idea_tracker/shoppinglist/">
+        {% csrf_token %}
+        <input type="submit" value="Next">
+    </form>
 
 {% endblock %}
