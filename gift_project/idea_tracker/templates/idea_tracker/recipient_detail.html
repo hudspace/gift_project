@@ -8,17 +8,10 @@
 
 
     <form>
-        <label class='recipient-detail'>{{ recipient }}</label>
+        <label class='recipient-detail'>{{ recipient }} {{ recipient.birthday }} {{ recipient.notes }} {{ recipient.gift_set }}</label>
     </form>
 
 
-
-
-
-
-            <!--{% for birthday in recipient_birthday %}
-            #<td>{{ recipient_birthday }}</td>
-            {% endfor %}-->
 
 
 {% endblock %}

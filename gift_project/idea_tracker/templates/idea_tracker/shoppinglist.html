@@ -11,11 +11,11 @@
 
             <h3> Click on a Recipient to edit or delete:</h3>
 
-                {% for name in recipient_list %}
+                {% for name in recipients %}
 
 
                     <ul>
-                        <li><a href="http://localhost:8000/idea_tracker/recipient_detail/{{name.id}}">{{ name.id }} {{ name.first_name }} {{ name.last_name }} /
+                        <li><a href="{{ name.get_absolute_url }}">{{ name.first_name }} {{ name.last_name }} /
 
                         {% for gift in name.gift_set.all %}
 
@@ -49,4 +49,3 @@
 </body>
 
 </html>
-

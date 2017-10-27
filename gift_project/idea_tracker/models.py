@@ -13,7 +13,7 @@ class Recipient(models.Model):
         return "{} {}".format(self.first_name, self.last_name)
 
     def get_absolute_url(self):
-        return reverse('views.recipient_detail', args=str(self.pk))
+        return reverse('recipient_detail', args=(), kwargs={'recipient_id': str(self.id)})
 
 
 class Gift(models.Model):

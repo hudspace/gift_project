@@ -42,16 +42,11 @@ def shopping_list(request):
     for y in gift_list:
         total.append(y.price)
         total_price = sum(total)
-    return render(request, 'idea_tracker/shoppinglist.html', {'recipient_list': recipients, 'total_price': total_price})
+    return render(request, 'idea_tracker/shoppinglist.html', {'recipients': recipients, 'total_price': total_price})
 
-def recipient_detail(request, pk):
-    recipient = get_object_or_404(models.Recipient, pk=pk)
+def recipient_detail(request, recipient_id):
+    recipient = get_object_or_404(models.Recipient, id=recipient_id)
     return render(request, 'idea_tracker/recipient_detail.html', {'recipient': recipient})
 
 def recipient_edit(request):
     recipient = get_object_or_404(models.Recipient)
-
-#class RecipientDetail(DetailView):
-    #model = Recipient
-
-
