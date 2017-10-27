@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^idea_tracker/', include('idea_tracker.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^home/', views.home, name='home'),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

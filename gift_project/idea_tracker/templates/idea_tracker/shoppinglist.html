@@ -15,7 +15,7 @@
 
 
                     <ul>
-                        <li><a href="{{ get_absolute_url }}">{{ name.first_name }} {{ name.last_name }} /
+                        <li><a href="http://localhost:8000/idea_tracker/recipient_detail/{{name.id}}">{{ name.id }} {{ name.first_name }} {{ name.last_name }} /
 
                         {% for gift in name.gift_set.all %}
 

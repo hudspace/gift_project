@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.views.generic import DetailView
 from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
@@ -37,10 +38,11 @@ def shopping_list(request):
     recipients = models.Recipient.objects.prefetch_related('gift_set').all().order_by('last_name')
     gift_list = models.Gift.objects.all()
     total = []
-    for x in gift_list:
-        total.append(x.price)
+
+    for y in gift_list:
+        total.append(y.price)
         total_price = sum(total)
-    return render(request, 'idea_tracker/shoppinglist.html', {'recipient_list': recipients, 'gift_list': gift_list, 'total_price': total_price})
+    return render(request, 'idea_tracker/shoppinglist.html', {'recipient_list': recipients, 'total_price': total_price})
 
 def recipient_detail(request, pk):
     recipient = get_object_or_404(models.Recipient, pk=pk)
@@ -48,3 +50,8 @@ def recipient_detail(request, pk):
 
 def recipient_edit(request):
     recipient = get_object_or_404(models.Recipient)
+
+#class RecipientDetail(DetailView):
+    #model = Recipient
+
+

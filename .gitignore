@@ -11,7 +11,7 @@
 *~
 
 # Database Files
-*.sqlite
+*.sqlite3
 
 # Virtual Environments
 sandbox*/
