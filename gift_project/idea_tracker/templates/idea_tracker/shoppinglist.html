@@ -2,14 +2,25 @@
 {% load static from staticfiles %}
 
 
+{% block css %} <link rel="stylesheet" href="{% static '/css/shoppinglist.css' %}">{% endblock %}
+
+
 
     {% block content %}
     <!--This page will output the results of the inputs on the forms page...a 'big picture'or 'shopping list' view of all recipients, their associated gifts, individual prices and a total price for all gifts-->
+
+<div class="paper">
+    <article class="head"></article>
+        <p>&nbsp;</p>
+
+
+
     <div class='container'>
 
         <div>
 
-            <h3> Click on a Recipient to edit or delete:</h3>
+            <h3>My Shopping List:</h3>
+            <h3 style='font-family: 'Kalam', cursive'>(click on a recipient to edit or delete)</h3>
 
                 {% for name in recipients %}
 
@@ -41,7 +52,11 @@
 
     </div>
 
+</div>
+
     {% endblock %}
+
+
 
 
 

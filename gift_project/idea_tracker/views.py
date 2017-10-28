@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.views.generic import DetailView
+from django.views.generic.edit import UpdateView
 from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
@@ -7,6 +7,8 @@ from django.http import HttpResponseRedirect
 
 from . import forms
 from . import models
+
+
 
 
 def recipient_form(request):
@@ -44,9 +46,11 @@ def shopping_list(request):
         total_price = sum(total)
     return render(request, 'idea_tracker/shoppinglist.html', {'recipients': recipients, 'total_price': total_price})
 
-def recipient_detail(request, recipient_id):
-    recipient = get_object_or_404(models.Recipient, id=recipient_id)
-    return render(request, 'idea_tracker/recipient_detail.html', {'recipient': recipient})
+#def recipient_detail(request, recipient_id):
+    #recipient = get_object_or_404(models.Recipient, id=recipient_id)
+    #return render(request, 'idea_tracker/recipient_detail.html', {'recipient': recipient})
 
-def recipient_edit(request):
-    recipient = get_object_or_404(models.Recipient)
+class RecipientUpdate(UpdateView):
+    model = models.Recipient
+    fields = ['first_name', 'last_name', 'birthday', 'notes']
+    template_name_suffix = '_update_form'

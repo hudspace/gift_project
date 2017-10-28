@@ -6,10 +6,14 @@
 <h3>This page will list one selected recipient at a time, along with that recipients attributes (birthday, notes, associated gifts). User will be able to edit or delete them</h3>
 
 
-
-    <form>
-        <label class='recipient-detail'>{{ recipient }} {{ recipient.birthday }} {{ recipient.notes }} {{ recipient.gift_set }}</label>
+    <form action='' method='POST'>{% csrf_token %}
+        {{ form.as_p }}
+        <input type="Submit" value="Update">
     </form>
+
+    <!--<form>
+        <label class='recipient-detail'>{{ recipient }} {{ recipient.birthday }} {{ recipient.notes }} {{ recipient.gift_set }}</label>
+    </form>-->
 
 
 
