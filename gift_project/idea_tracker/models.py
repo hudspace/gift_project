@@ -16,6 +16,8 @@ class Recipient(models.Model):
         return reverse('recipient_update_form', kwargs={'pk': self.pk})
 
 
+
+
 class Gift(models.Model):
     name = models.CharField(max_length=30, blank=True)
     model_number = models.CharField(max_length=30, blank=True)

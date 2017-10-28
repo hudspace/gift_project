@@ -54,3 +54,6 @@ class RecipientUpdate(UpdateView):
     model = models.Recipient
     fields = ['first_name', 'last_name', 'birthday', 'notes']
     template_name_suffix = '_update_form'
+
+    def get_success_url(self):
+        return reverse('shopping_list')
