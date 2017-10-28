@@ -6,9 +6,17 @@
 <h3>Edit or Delete Recipient info:</h3>
 
 
-    <form action='' method='POST'>{% csrf_token %}
+    <form action='' method="POST">{% csrf_token %}
         {{ form.as_p }}
         <input type="Submit" value="Update">
+
+        <br>
+
+
+
+
+        <p>Or you can click here to delete this record altogether. Are you sure you want to delete "{{ object }}"?</p>
+        <input type="Submit" value="Delete">
     </form>
 
     <!--<form>

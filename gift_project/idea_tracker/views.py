@@ -1,5 +1,6 @@
 from django.contrib import messages
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import UpdateView, DeleteView
+from django.urls import reverse_lazy
 from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
@@ -8,6 +9,19 @@ from django.http import HttpResponseRedirect
 from . import forms
 from . import models
 
+
+class RecipientUpdate(UpdateView):
+    model = models.Recipient
+    fields = ['first_name', 'last_name', 'birthday', 'notes']
+    template_name_suffix = '_update_form'
+
+    def get_success_url(self):
+        return reverse('shopping_list')
+
+class RecipientDelete(DeleteView):
+    model = models.Recipient
+    template_name = ('recipient_update_form')
+    success_url = reverse_lazy('shopping_list')
 
 
 
@@ -46,14 +60,4 @@ def shopping_list(request):
         total_price = sum(total)
     return render(request, 'idea_tracker/shoppinglist.html', {'recipients': recipients, 'total_price': total_price})
 
-#def recipient_detail(request, recipient_id):
-    #recipient = get_object_or_404(models.Recipient, id=recipient_id)
-    #return render(request, 'idea_tracker/recipient_detail.html', {'recipient': recipient})
 
-class RecipientUpdate(UpdateView):
-    model = models.Recipient
-    fields = ['first_name', 'last_name', 'birthday', 'notes']
-    template_name_suffix = '_update_form'
-
-    def get_success_url(self):
-        return reverse('shopping_list')
