@@ -8,13 +8,18 @@
    height: 94%;
 }*/
 
+.wrapper {
+    width: 95%;
+    margin: 0 auto;
+}
+
 .paper {
   font: normal 12px/1.5 "Lucida Grande", arial, sans-serif;
   width: 50%;
   height: 80%;
-  margin: 2em auto;
-  padding: 6px 5px 4px 42px;
+  padding: 6px 5px 4px 10px;
   position: relative;
+  margin: 2em auto;
   color: #444;
   line-height: 20px;
   border: 1px solid #d2d2d2;
@@ -36,7 +41,7 @@
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.07);
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.07);
   box-shadow: 0 1px 2px rgba(0,0,0,0.07);
-  width: 816px;
+  width: 95%;
   height: 1056px;
 }
 
@@ -51,7 +56,7 @@
   border-color: transparent #efe4e4;
 }
 
-textarea {
+/*textarea {
   display: block;
   width: 94%;
   margin: 0 auto;
@@ -61,13 +66,41 @@ textarea {
   height: 94%;
   background: transparent;
   line-height: 20px;
-}
+}*/
 
 .head {
    background-color: #FFF;
    min-height: 124px;
-   margin-left: -42px;
+   margin-left: -10px;
    margin-top: -4px;
+}
+
+.price {
+  margin: 0 auto;
+  margin-top: 4em;
+  border-top: solid black 1px;
+}
+
+
+
+@media (min-width: 695px) {
+  .wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.container {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    margin-left: 4rem;
+}
+
+.price {
+    font-family: 'Kalam', cursive;
+    grid-column-start: 2;
+    text-align: right;
+    border-top: none;
 }
 
 

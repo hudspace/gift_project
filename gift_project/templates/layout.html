@@ -5,6 +5,7 @@
 
     <title>{% block title %}{% endblock %}</title>
     <link href="https://fonts.googleapis.com/css?family=Kalam|Monoton|Permanent+Marker" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/css/normalize.css' %}">
     <link rel="stylesheet" href="{% static '/css/layout.css' %}">
     {% block css %}{% endblock %}
 
@@ -13,7 +14,7 @@
 
 <body>
 
-    <div class="hero">
+    <div>
 
         <header>
             <h1>GIFT TRACKER</h1>
@@ -28,10 +29,11 @@
 
     </div>
 
+    <div class="wrapper">
+
     {% block content %}{% endblock %}
 
-
-
+    </div>
 
 </body>
 </html>

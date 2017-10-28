@@ -1,25 +1,23 @@
 
 
 :root {
-    background: #c6ebbe
-;
+    background: #c6ebbe;
 }
 
+.wrapper {
+    width: 95%;
+    margin: 0 auto;
+}
 
 header {
     background: #8b6742;
     color: #000;
     background-image: url('../images/pattern2.png');
     z-index: 1000;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas:
-    "title nav";
+    text-align: center;
 }
 
 header h1 {
-    grid-area: title;
     text-align: center;
     color: #bc8da0;
     font-family: 'Monoton', cursive;
@@ -28,19 +26,15 @@ header h1 {
 }
 
 nav {
-    grid-area: nav;
+    margin: 1em 5px auto;
+    display: inline-block;
 }
 
-nav ul {
-    text-align: right;
-    margin: 0 auto;
-}
-
-nav li, li {
+nav li {
     font-family: 'Kalam', cursive;
     display: block;
-    margin: 0 2em;
-    padding: 0 1em 10px;
+    margin: 0 1em;
+    padding: 2px 2px 10px;
 }
 
 
@@ -90,21 +84,39 @@ input {
     margin-bottom: 2em;
 }
 
-.container {
-    width: 80%;
+
+/* Media Queries */
+
+@media (min-width: 695px) {
+
+header {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    /*grid-template-areas:
+    "title nav";*/
 }
 
-
-
-.price {
-    font-family: 'Kalam', cursive;
-    grid-area: price;
+header h1 {
+    text-align: left;
+    margin-left: .5em;
 }
 
-.recipient-detail h5 {
-    font-family: 'Kalam', cursive;
-    font-size: xx-large;
+/*header h1 {
+    grid-area: title;
+}
+
+nav {
+    grid-area: nav;
+}*/
+
+nav ul {
+    text-align: right;
+    margin: 0 auto;
+}
+
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
 }
 

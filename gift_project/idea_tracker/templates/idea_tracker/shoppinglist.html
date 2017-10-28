@@ -6,58 +6,48 @@
 
 
 
-    {% block content %}
-    <!--This page will output the results of the inputs on the forms page...a 'big picture'or 'shopping list' view of all recipients, their associated gifts, individual prices and a total price for all gifts-->
+{% block content %}
 
-<div class="paper">
-    <article class="head"></article>
+
+<div class="wrapper">
+    <div class="paper">
+        <article class="head"></article>
         <p>&nbsp;</p>
 
 
 
-    <div class='container'>
+        <div class="container">
 
-        <div>
+            <div>
+                <h3>My Shopping List:</h3>
+                <h3 style='font-family: 'Kalam', cursive'>(click on a recipient to edit or delete)</h3>
 
-            <h3>My Shopping List:</h3>
-            <h3 style='font-family: 'Kalam', cursive'>(click on a recipient to edit or delete)</h3>
+                    {% for name in recipients %}
 
-                {% for name in recipients %}
+                        <ul>
+                            <li style="font-family: 'Kalam', cursive; font-size: 1.5em"><a href="{{ name.get_absolute_url }}">{{ name.first_name }} {{ name.last_name }} /
 
+                            {% for gift in name.gift_set.all %}
 
-                    <ul>
-                        <li><a href="{{ name.get_absolute_url }}">{{ name.first_name }} {{ name.last_name }} /
+                             <span style='color:darkblue'>{{ gift }}</span></a></li>
 
-                        {% for gift in name.gift_set.all %}
+                             {% endfor %}
+                        </ul>
+                    {% endfor %}
+            </div>
 
-                         <span style='color:darkblue'>{{ gift }}</span></a></li>
-
-                         {% endfor %}
-                    </ul>
-
-                {% endfor %}
-
-        </div>
-
-        <div>
-            <h3>Total required budget:</h3>
-
-
-            <h3 class='price'>$ {{ total_price }}</h3>
-
-
+            <div class="price">
+                <h3>Total required budget:</h3>
+                <h3>$ {{ total_price }}</h3>
+            </div>
 
         </div>
-
 
     </div>
 
 </div>
 
-    {% endblock %}
-
-
-
+{% endblock %}
 
 
 
