@@ -3,20 +3,19 @@
 
 {% block content %}
 
-<h3>This page will list one selected recipient at a time, along with that recipients attributes (birthday, notes, associated gifts). User will be able to edit or delete them</h3>
+<h3>Edit or Delete Recipient info:</h3>
 
+<form action='' method="POST">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="Submit" value="Update">
 
-    <form action='' method='POST'>{% csrf_token %}
-        {{ form.as_p }}
-        <input type="Submit" value="Update">
-    </form>
+    <br>
 
-    <!--<form>
-        <label class='recipient-detail'>{{ recipient }} {{ recipient.birthday }} {{ recipient.notes }} {{ recipient.gift_set }}</label>
-    </form>-->
+    <p>Or you can click here to delete this record altogether. Are you
+    sure you want to delete "{{ object }}"?</p>
 
-
-
+    <input type="Submit" value="Delete">
+</form>
 
 {% endblock %}
 
