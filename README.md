@@ -7,7 +7,16 @@ For MAC users:
 
 1) Clone this repository on your own computer.
 2) Open Finder and go to Applications-->Utilities-->Terminal.
-3) In Terminal, use the cd (Change Directory) command to navigate to the root folder in the GiftTracker project. The root folder is entitled gift_project and contains the manage.py and db.sqlite3 files, along with a few others.
-4) Once you're in that folder, type the following: python3 manage.py runserver.
-5) Now go to your browser and in the address window type the following: localhost:8000/home
-6) The app page should appear and you're good to go.
+3) It's recommended that you set up a virtual environment that will run the dependencies required to view this app using your local server. Create a directory in which to store the virtual environment, and then use the cd (Change Directory) command to navigate to that directory. To create the virtual environment, type the following at the Terminal prompt:
+
+`virtualenv -p python3 ~/.virtualenvs/<gift_project>`
+
+4) Now use the cd command to navigate to the root folder in the GiftTracker project. The root folder is entitled gift_project and contains the manage.py and db.sqlite3 files, along with a few others.
+
+
+5) Once you're in that folder, type the following:
+
+`python3 manage.py runserver`
+
+6) Now go to your browser and in the address window type the following: localhost:8000/home
+7) The app page should appear and you're good to go.
