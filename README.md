@@ -7,7 +7,7 @@ Getting up and running...
 
 1) Clone this repository on your own computer.
 2) Open Finder and go to Applications-->Utilities-->Terminal.
-3) It's recommended that you set up a virtual environment that will run the dependencies required to view this app using your local server. Create a directory in which to store the virtual environment, and then use the cd (Change Directory) command to navigate to that directory. To create the virtual environment, type the following at the Terminal prompt:
+3) It's recommended that you set up a virtual environment that will run the dependencies required to view this app using your local server (python, pip, django). It's not totally necessary, but if you choose to do so, follow these steps. First, create a directory in which to store the virtual environment, and then use the cd (Change Directory) command to navigate to that directory. To create the virtual environment, type the following at the Terminal prompt:
 
 `virtualenv -p python3 ~/.virtualenvs/<gift_project>`
 
