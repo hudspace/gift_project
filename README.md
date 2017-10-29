@@ -3,7 +3,7 @@ GiftTracker is a web application for tracking gift ideas for the special people 
 
 Getting up and running...
 
-For MAC users:
+**For MAC users:**
 
 1) Clone this repository on your own computer.
 2) Open Finder and go to Applications-->Utilities-->Terminal.
