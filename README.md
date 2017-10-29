@@ -12,8 +12,6 @@ For MAC users:
 `virtualenv -p python3 ~/.virtualenvs/<gift_project>`
 
 4) Now use the cd command to navigate to the root folder in the GiftTracker project. The root folder is entitled gift_project and contains the manage.py and db.sqlite3 files, along with a few others.
-
-
 5) Once you're in that folder, type the following:
 
 `python3 manage.py runserver`
