@@ -15,13 +15,15 @@ class RecipientUpdate(UpdateView):
     fields = ['first_name', 'last_name', 'birthday', 'notes']
     template_name_suffix = '_update_form'
 
+
     def get_success_url(self):
         return reverse('shopping_list')
 
 class RecipientDelete(DeleteView):
     model = models.Recipient
-    template_name = ('recipient_update_form')
-    success_url = reverse_lazy('shopping_list')
+
+    def get_success_url(self):
+        return reverse('shopping_list')
 
 
 def recipient_form(request):
@@ -53,11 +55,10 @@ def shopping_list(request):
     recipients = models.Recipient.objects.prefetch_related('gift_set').all().order_by('last_name')
     gift_list = models.Gift.objects.all()
     total = []
+    total_price = 0
 
+    #this loop sums the total of all gifts allowing a total starting budget to be displayed
     for y in gift_list:
         total.append(y.price)
         total_price = sum(total)
     return render(request, 'idea_tracker/shoppinglist.html', {'recipients': recipients, 'total_price': total_price})
-
-
-

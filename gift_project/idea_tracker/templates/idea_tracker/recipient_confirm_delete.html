@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% load static from staticfiles %}
+
+{% block content %}
+
+<h3>Confirm Deletion?</h3>
+
+<form action='' method="POST">{% csrf_token %}
+
+    <p>Ok, are you SURE you want to delete "{{ object }}"?</p>
+    <input type="Submit" value="Yes I'm sure, Delete">
+</form>
+
+{% endblock %}
+

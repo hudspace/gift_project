@@ -12,9 +12,9 @@
 
     <br>
 
-<form action='' method="POST">{% csrf_token %}
+<form action="/idea_tracker/recipient_delete/{{ object.pk }}" method="GET">{% csrf_token %}
 
-    <p>Or you can click here to delete this record altogether. Are you sure you want to delete "{{ object }}"?</p>
+    <p>Or you can click here to delete "{{ object }}" altogether...</p>
     <input type="Submit" value="Delete">
 </form>
 
