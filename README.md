@@ -19,10 +19,10 @@ then:
 
 `pip3 install django`
 
-5) Now use the cd command to navigate to the root folder in the GiftTracker project. The root folder is entitled gift_project and contains the manage.py and db.sqlite3 files, along with a few others.
+6) Now use the cd command to navigate to the root folder in the GiftTracker project. The root folder is entitled gift_project and contains the manage.py and db.sqlite3 files, along with a few others.
 6) Once you're in that folder, type the following:
 
 `python3 manage.py runserver`
 
-6) Now go to your browser and in the address window type the following: localhost:8000/home
-7) The app homepage should appear and you're good to go.
+7) Now go to your browser and in the address window type the following: localhost:8000/home
+8) The app homepage should appear and you're good to go.
