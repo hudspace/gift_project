@@ -9,7 +9,11 @@ Getting up and running...
 2) Open Finder and go to Applications-->Utilities-->Terminal.
 3) It's recommended that you set up a virtual environment that will run the dependencies required to view this app using your local server (python, pip, django). It's not totally necessary, but if you choose to do so, follow these steps. First, create a directory in which to store the virtual environment, and then use the cd (Change Directory) command to navigate to that directory. To create the virtual environment, type the following at the Terminal prompt:
 
-`virtualenv -p python3 ~/.virtualenvs/<gift_project>`
+`virtualenv -p python3 ~/.virtualenvs/gift_project`
+
+then:
+
+`source gift_project/bin/activate`
 
 4) Now use the cd command to navigate to the root folder in the GiftTracker project. The root folder is entitled gift_project and contains the manage.py and db.sqlite3 files, along with a few others.
 5) Once you're in that folder, type the following:
