@@ -15,8 +15,12 @@ then:
 
 `source gift_project/bin/activate`
 
-4) Now use the cd command to navigate to the root folder in the GiftTracker project. The root folder is entitled gift_project and contains the manage.py and db.sqlite3 files, along with a few others.
-5) Once you're in that folder, type the following:
+5) Now that your virtualenv is created, you need to install django. Type the following:
+
+`pip3 install django`
+
+5) Now use the cd command to navigate to the root folder in the GiftTracker project. The root folder is entitled gift_project and contains the manage.py and db.sqlite3 files, along with a few others.
+6) Once you're in that folder, type the following:
 
 `python3 manage.py runserver`
 
