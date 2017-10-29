@@ -21,4 +21,4 @@ then:
 `python3 manage.py runserver`
 
 6) Now go to your browser and in the address window type the following: localhost:8000/home
-7) The app page should appear and you're good to go.
+7) The app homepage should appear and you're good to go.
