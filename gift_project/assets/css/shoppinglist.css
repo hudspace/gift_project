@@ -1,17 +1,16 @@
-/*body {
-   background: -webkit-linear-gradient(top, rgb(136,199,201) 58%, rgb(202,232,235) 100%);
-   background: -moz-linear-gradient(top, rgb(136,199,201) 58%, rgb(202,232,235) 100%);
-   background: -ms-linear-gradient(top, rgb(136,199,201) 58%, rgb(202,232,235) 100%);
-   background: -o-linear-gradient(top, rgb(136,199,201) 58%, rgb(202,232,235) 100%);
-   background: linear-gradient(top, rgb(136,199,201) 58%, rgb(202,232,235) 100%);
-   padding: 3%;
-   height: 94%;
-}*/
 
 .wrapper {
     width: 95%;
     margin: 0 auto;
 }
+
+.price {
+  margin: 0 auto;
+  margin-top: 4em;
+  border-top: solid black 1px;
+}
+
+/* Notebook paper effect */
 
 .paper {
   font: normal 12px/1.5 "Lucida Grande", arial, sans-serif;
@@ -56,17 +55,6 @@
   border-color: transparent #efe4e4;
 }
 
-/*textarea {
-  display: block;
-  width: 94%;
-  margin: 0 auto;
-  padding: 3.8% 3%;
-  border: none;
-  outline: none;
-  height: 94%;
-  background: transparent;
-  line-height: 20px;
-}*/
 
 .head {
    background-color: #FFF;
@@ -75,12 +63,9 @@
    margin-top: -4px;
 }
 
-.price {
-  margin: 0 auto;
-  margin-top: 4em;
-  border-top: solid black 1px;
-}
 
+
+/* Responsive styling */
 
 
 @media (min-width: 695px) {

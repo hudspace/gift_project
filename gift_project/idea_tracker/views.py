@@ -1,6 +1,5 @@
 from django.contrib import messages
 from django.views.generic.edit import UpdateView, DeleteView
-from django.urls import reverse_lazy
 from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
@@ -52,7 +51,10 @@ def gift_form(request):
 
 
 def shopping_list(request):
+    #query set that includes each object's associated gifts from Gift model(ManyToManyField)
     recipients = models.Recipient.objects.prefetch_related('gift_set').all().order_by('last_name')
+
+    #query set that will be iterated over in for loop below
     gift_list = models.Gift.objects.all()
     total = []
     total_price = 0

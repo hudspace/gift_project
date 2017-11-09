@@ -17,7 +17,6 @@ class Recipient(models.Model):
 
 
 
-
 class Gift(models.Model):
     name = models.CharField(max_length=30, blank=True)
     model_number = models.CharField(max_length=30, blank=True)
@@ -27,6 +26,9 @@ class Gift(models.Model):
 
     def __str__(self):
         return "{}".format(self.name)
+
+
+
 
 
 
