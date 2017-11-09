@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<h3>Edit or Delete Recipient info:</h3>
+<h3>Edit or Delete Gift info:</h3>
 
 <form action='' method="POST">{% csrf_token %}
     {{ form.as_p }}
@@ -12,12 +12,10 @@
 
     <br>
 
-<form action="/idea_tracker/recipient_delete/{{ object.pk }}/" method="GET">
-
+<form action="/idea_tracker/gift_delete/{{ object.pk }}/" method="GET">
 
     <p>Or you can click here to delete "{{ object }}" altogether...</p>
     <input type="Submit" value="Delete">
 </form>
 
 {% endblock %}
-

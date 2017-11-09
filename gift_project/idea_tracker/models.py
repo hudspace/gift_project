@@ -27,6 +27,10 @@ class Gift(models.Model):
     def __str__(self):
         return "{}".format(self.name)
 
+    def get_absolute_url(self):
+        return reverse('gift_update_form', kwargs={'pk': self.pk})
+
+
 
 
 
