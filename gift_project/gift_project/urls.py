@@ -20,6 +20,8 @@ from django.conf import settings
 
 from . import views
 
+
+#gift_project url patterns
 urlpatterns = [
     url(r'^idea_tracker/', include('idea_tracker.urls')),
     url(r'^admin/', admin.site.urls),

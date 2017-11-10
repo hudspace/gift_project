@@ -68,16 +68,23 @@ def gift_form(request):
 
 
 def shopping_list(request):
-    #query set that includes each object's associated gifts from Gift model(ManyToManyField)
+    #queryset that includes each object's associated gifts from Gift model(ManyToManyField)
     recipients = models.Recipient.objects.all().order_by('last_name')
 
-    #query set that will be iterated over in for loop below
+    #queryset that will be iterated over in for loop below
     gift_list = models.Gift.objects.all()
     total = []
     total_price = 0
 
     #this loop sums the total of all gifts allowing a total starting budget to be displayed
     for y in gift_list:
-        total.append(y.price)
-        total_price = sum(total)
+
+        try:
+            total.append(y.price)
+            total_price = sum(total)
+
+        except y.DoesNotExist:
+            total_price -= y.price
+
+
     return render(request, 'idea_tracker/shoppinglist.html', {'recipients': recipients, 'total_price': total_price})

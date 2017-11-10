@@ -22,21 +22,23 @@
                 <h3>My Shopping List:</h3>
                 <h3 style='font-family: 'Kalam', cursive'>(click on a recipient to edit or delete)</h3>
 
+                    <!--iterate over the queryset retrieved in the shopping_list view, then access each resulting object's name and associated gift from the model field definitions and display them in list form-->
                     {% for name in recipients %}
 
                         <ul>
                             <li style="font-family: 'Kalam', cursive; font-size: 1.5em"><a href="{{ name.get_absolute_url }}">{{ name.first_name }} {{ name.last_name }} </a> /
 
-                            {% for gift in name.gift_set.all %}
+                                {% for gift in name.gift_set.all %}
 
-                             <a href="{{ gift.get_absolute_url}}"><span style='color:darkblue'>{{ gift }}</span></a></li>
+                             <a href="{{ gift.get_absolute_url }}"><span style='color:darkblue'>{{ gift }}</span></a></li>
                         </ul>
 
-                            {% endfor %}
+                                {% endfor %}
 
                     {% endfor %}
             </div>
 
+            <!--display the current updated price of all gifts in the shopping list-->
             <div class="price">
                 <h3>Total required budget:</h3>
                 <h3>$ {{ total_price }}</h3>

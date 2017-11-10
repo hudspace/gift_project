@@ -37,6 +37,10 @@ nav li {
     padding: 2px 2px 10px;
 }
 
+nav li a {
+    font-weight: bold;
+}
+
 
 a {
     color: #bc8da0;
