@@ -76,7 +76,7 @@ def shopping_list(request):
     total = []
     total_price = 0
 
-    #this loop sums the total of all gifts allowing a total starting budget to be displayed
+    #this loop sums the total of all gifts allowing a total starting budget to be displayed, and subtracts the price of a deleted item so that current total is always correct
     for y in gift_list:
 
         try:
