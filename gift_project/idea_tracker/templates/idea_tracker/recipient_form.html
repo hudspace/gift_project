@@ -2,31 +2,31 @@
 {% load static from staticfiles %}
 
 
-    {% block content %}
+{% block content %}
 
-    <h2>First, create your list of potential gift recipients:</h2>
-
-
-    <form method="POST" action="/idea_tracker/forms/recipient_form/">
-        {% csrf_token %}
-        {{ recipient_form.as_p }}
-        <input type="submit" value="Add Recipient">
-    </form>
-
-    <h4>All done? Click "Next" to start adding gift ideas...</h4>
-    <form method="POST" action="/idea_tracker/forms/gift_form/">
-        {% csrf_token %}
-        <input type="submit" value="Next">
-    </form>
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li style='list-style-type: none' {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
 
 
-
-    {% if messages %}{{ message }}{% endif %}
-
-    {% endblock %}
+<h2>First, create your list of potential gift recipients:</h2>
 
 
+<form method="POST" action="/idea_tracker/forms/recipient_form/">
+    {% csrf_token %}
+    {{ recipient_form.as_p }}
+    <input type="submit" value="Add Recipient">
+</form>
+
+<h4>All done? Click "Next" to start adding gift ideas...</h4>
+<form method="POST" action="/idea_tracker/forms/gift_form/">
+    {% csrf_token %}
+    <input type="submit" value="Next">
+</form>
 
 
-
-
+{% endblock %}

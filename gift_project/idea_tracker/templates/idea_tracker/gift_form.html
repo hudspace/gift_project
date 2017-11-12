@@ -3,7 +3,15 @@
 
 {% block content %}
 
-<h2>Now, enter your gift ideas:</h2>
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li style='list-style-type: none' {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<h2>Now, enter your gift ideas and intended recipients (if any):</h2>
 
     <form method="POST" action="">
         {% csrf_token %}
