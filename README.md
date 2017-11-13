@@ -6,22 +6,12 @@ Getting up and running...
 **For Mac users:**
 
 1) Clone this repository on your own computer.
-2) Open Finder and go to Applications-->Utilities-->Terminal.
-3) It's recommended that you set up a virtual environment that will run the dependencies required to view this app using your local server (python, pip, django). It's not totally necessary, but if you choose to do so, follow these steps. First, create a directory in which to store the virtual environment, and then use the cd (Change Directory) command to navigate to that directory. To create the virtual environment, type the following at the Terminal prompt:
 
-`virtualenv -p python3 ~/.virtualenvs/gift_project`
+2) Review the requirements.txt file and from the command line, install the required dependencies in order to run the app. If you already have python3 and a virtual environment ready to go, these additional steps will include installing django, django debug toolbar, and django rest framework.
 
-then:
+3) Next, navigate to the root folder in the GiftTracker project. The root folder is entitled gift_project and contains the manage.py and db.sqlite3 files, along with a few others.
 
-`source gift_project/bin/activate`
-
-5) Now that your virtualenv is created, you need to install django. Type the following:
-
-`pip3 install django`
-
-6) Next, use the cd command to navigate to the root folder in the GiftTracker project. The root folder is entitled gift_project and contains the manage.py and db.sqlite3 files, along with a few others.
-
-7) Once you're in that folder, type the following:
+4) Once you're in that folder, type the following:
 
 'python3 manage.py migrate'
 
@@ -29,6 +19,6 @@ This will initialize the application databases. Then type:
 
 `python3 manage.py runserver`
 
-8) Now go to your browser and in the address window type the following: localhost:8000
+5) Now go to your browser and in the address window type the following: localhost:8000
 
-9) The app homepage should appear and you're good to go.
+6) The app homepage should appear and you're good to go.
