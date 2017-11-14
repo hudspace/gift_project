@@ -10,7 +10,7 @@
   border-top: solid black 1px;
 }
 
-/* Notebook paper effect */
+/* Ruled paper effect */
 
 .paper {
   font: normal 12px/1.5 "Lucida Grande", arial, sans-serif;
@@ -43,6 +43,8 @@
   width: 95%;
   height: 1056px;
 }
+
+/* left margin and double vertical reddish lines effect */
 
 .paper::before {
   content: '';

@@ -70,13 +70,12 @@ def gift_form(request):
 def shopping_list(request):
     #queryset that includes each object's associated gifts from Gift model(ManyToManyField)
     recipients = models.Recipient.objects.all().prefetch_related('gift_set').order_by('last_name')
-
-    #queryset that will be iterated over in for loop below
-    gift_list = models.Gift.objects.all()
     total = []
     total_price = 0
 
-    #this loop sums the total of all gifts allowing a total starting budget to be displayed, and subtracts the price of a deleted item so that current total is always correct
+    #this nested loop sums the total of all gifts allowing a total starting budget to be displayed, \
+    #but first checks that the gift and associated recipient exist. If not, it subtracts the price of \
+    #the missing (i.e., deleted) item so that the current total is always correct
     for name in recipients:
         for gift in name.gift_set.all():
             try:
