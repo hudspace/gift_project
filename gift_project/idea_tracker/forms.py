@@ -11,6 +11,7 @@ class RecipientForm(ModelForm):
         }
         fields = ['first_name', 'last_name', 'birthday', 'notes',]
 
+
 class GiftForm(ModelForm):
     class Meta:
         model = models.Gift
