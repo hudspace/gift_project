@@ -70,6 +70,8 @@ def gift_form(request):
 def shopping_list(request):
     #queryset that includes each object's associated gifts from Gift model(ManyToManyField)
     recipients = models.Recipient.objects.all().prefetch_related('gift_set').order_by('last_name')
+
+    #variables to be used to present updated budget in shopping list template
     total = []
     total_price = 0
 
