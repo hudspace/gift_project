@@ -58,6 +58,7 @@
 }
 
 /* notebook paper header styling */
+
 .head {
    background-color: #FFF;
    min-height: 124px;
@@ -68,7 +69,6 @@
 
 
 /* Responsive styling */
-
 
 @media (min-width: 695px) {
   .wrapper {
