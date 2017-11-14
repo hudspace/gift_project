@@ -9,7 +9,7 @@ Getting up and running...
 
 2) Review the requirements.txt file and from the command line, install the required dependencies in order to run the app. If you already have python3 and a virtual environment ready to go, these additional steps will include installing django, django debug toolbar, and django rest framework.
 
-3) Next, navigate to the root folder in the GiftTracker project. The root folder is entitled gift_project and contains the manage.py and db.sqlite3 files, along with a few others.
+3) Next, navigate to directory entitled gift_project which contains the manage.py script.
 
 4) Once you're in that folder, type the following:
 
@@ -22,3 +22,6 @@ This will initialize the application databases. Then type:
 5) Now go to your browser and in the address window type the following: localhost:8000
 
 6) The app homepage should appear and you're good to go.
+
+
+
