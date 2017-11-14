@@ -1,9 +1,6 @@
 from django.forms import ModelForm
-
 from datetime import date
-
 from django import forms
-
 from . import models
 
 class RecipientForm(ModelForm):
