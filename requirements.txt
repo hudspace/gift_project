@@ -4,4 +4,4 @@ django-debug-toolbar==1.8
 djangorestframework==3.7.1
 pytz==2017.2
 sqlparse==0.2.4
-virtualenv==15.1.0 (recommended)
+virtualenv==15.1.0
