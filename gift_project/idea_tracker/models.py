@@ -1,6 +1,5 @@
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db import models
-
 
 
 class Recipient(models.Model):
@@ -16,7 +15,6 @@ class Recipient(models.Model):
         return reverse('recipient_update_form', kwargs={'pk': self.pk})
 
 
-
 class Gift(models.Model):
     name = models.CharField(max_length=30, blank=True)
     model_number = models.CharField(max_length=30, blank=True)
@@ -29,12 +27,3 @@ class Gift(models.Model):
 
     def get_absolute_url(self):
         return reverse('gift_update_form', kwargs={'pk': self.pk})
-
-
-
-
-
-
-
-
-

@@ -5,9 +5,9 @@
 {% block content %}
 
 {% if messages %}
-    <ul class="messages">
+    <ul>
         {% for message in messages %}
-        <li style='list-style-type: none' {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        <li style='list-style-type: none; font-family: Kalam, cursive; font-size: 1em; color: blue' {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
         {% endfor %}
     </ul>
 {% endif %}

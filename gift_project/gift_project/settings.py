@@ -126,7 +126,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'assets'),
 ]
 
-
 DEBUG_TOOLBAR_CONFIG = {
     'SHOW_TOOLBAR_CALLBACK': lambda x: True
 }
@@ -142,4 +141,6 @@ REST_FRAMEWORK = {
         'rest_framework.permission.IsAuthenticatedOrReadOnly',
         )
     }
+
+
 
